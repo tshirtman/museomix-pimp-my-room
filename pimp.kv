@@ -1,6 +1,7 @@
 #:import join os.path.join
 #:import Factory kivy.factory.Factory
 #:import types main.types
+#:import MINIATURES main.MINIATURES
 #:set choice_height '4cm'
 
 <Choser>:
@@ -14,16 +15,25 @@
 
 
 <RoomView@FloatLayout>:
-    canvas.before:
-        Color:
-            rgba: 1, 1, 1, 1
-        Rectangle:
-            #pos: self.pos
-            size: self.size
+    #canvas.before:
+    #    Color:
+    #        rgba: 1, 1, 1, 1
+    #    Rectangle:
+    #        #pos: self.pos
+    #        size: self.size
+    #    Color:
+    #        rgba: 0, 0, 0, 1
+    #    Rectangle:
+    #        pos: 0, 0
+    #        size: img.width, root.height
+    #    Rectangle:
+    #        pos: img.right, 0
+    #        size: root.width - img.right, root.height
 
     Image:
+        id: img
         source: app.wallpaper
-        pos_hint: {'center': (.5, .5)}
+        pos_hint: {'center_x': .5, 'y': 0}
         allow_stretch: True
         keep_ratio: False
     Widget:
@@ -33,17 +43,39 @@
     Image:
         id: foreground
         size: root.size
-        source: join('data', 'foreground.png')
+        source: join('data', 'interface-fond-OK.png')
     Widget:
         id: dnd
 
 
 <Poster>:
     #do_rotation: False
+    size: img.texture_size
     Image:
+        id: img
+        size: self.texture_size
         source: root.source
         allow_stretch: True
-    #TODO kill button
+
+    Button:
+        id: close
+        size_hint: None, None
+        size: 60, 60
+        center: root.width / 2, root.height / 2
+        disabled: True
+        opacity: 0
+        text: 'x'
+        background_normal: ''
+        background_down: ''
+        canvas.before:
+            Color:
+                rgba: 1, 0, 0, 1
+            Ellipse:
+                pos: self.pos
+                size: self.size
+        on_release:
+            print "test"
+            root.parent.remove_widget(root)
 
 
 <Choice@Image>:
@@ -51,11 +83,19 @@
     size: 300, 300
     pos_hint: {'top': '1'}
 
+
 <TypeButton>:
     group: 'type'
-    y: choice_height if self.state == 'down' else 0
-    text: self.t
+    # sorry for parent.parent.parent
+    y: self.parent.parent.parent.ids.choices.top if self.state == 'down' else 0
+    background_color: (self.x / 200) % 1, (self.x / 150) % 1, (self.x / 580) % 1, 1
+    text: self.t.replace(MINIATURES, '')
+    on_text: print self.text
+    on_t:
+        print self.t, MINIATURES, self.t.replace(MINIATURES, '')
+        self.text = self.t.replace(MINIATURES, '')
     font_size: '2cm'
+    font_name: join('data', 'OSP-DIN.ttf')
 
 
 BoxLayout:
@@ -64,29 +104,31 @@ BoxLayout:
         id: roomview
 
     Widget:
-        id: choice_cointainer
+        id: choice_container
         size_hint_y: None
+        height: 0
         ScrollView:
             canvas.before:
                 Color:
-                    rgba: 1, 0, 0, 1
+                    rgba: .1, .1, .1, .9
                 Rectangle:
                     pos: self.pos
                     size: self.size
 
-            top: 200 if choser.choice else 0
+            y: (choser.top) if choser.choice else -1000
             x: self.parent.x
-            size: self.parent.size
+            width: self.parent.width
+            height: choices.height
             GridLayout:
                 id: choices
                 rows: 1
                 size_hint: None, None
-                height: choice_cointainer.height
+                height: self.minimum_height
                 width: self.minimum_width
 
         Choser:
             pos: self.parent.pos
-            size: self.parent.size
+            width: self.parent.width
             id: choser
             height: '2cm'
             on_choice: print self.choice
@@ -97,12 +139,12 @@ BoxLayout:
             TypeButton:
                 t: types[1]
                 on_state: choser.update_choice()
-            TypeButton:
-                t: types[2]
-                on_state: choser.update_choice()
+            #TypeButton:
+            #    t: types[2]
+            #    on_state: choser.update_choice()
             TypeButton:
                 t: types[3]
                 on_state: choser.update_choice()
-            TypeButton:
-                t: types[4]
-                on_state: choser.update_choice()
+            #ypeButton:
+            #   t: types[4]
+            #   on_state: choser.update_choice()
