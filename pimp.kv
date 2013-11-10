@@ -1,0 +1,108 @@
+#:import join os.path.join
+#:import Factory kivy.factory.Factory
+#:import types main.types
+#:set choice_height '4cm'
+
+<Choser>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Rectangle:
+            pos: root.pos
+            size: root.size
+
+
+<RoomView@FloatLayout>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            #pos: self.pos
+            size: self.size
+
+    Image:
+        source: app.wallpaper
+        pos_hint: {'center': (.5, .5)}
+        allow_stretch: True
+        keep_ratio: False
+    Widget:
+        id: posters
+    Widget:
+        id: windows
+    Image:
+        id: foreground
+        size: root.size
+        source: join('data', 'foreground.png')
+    Widget:
+        id: dnd
+
+
+<Poster>:
+    #do_rotation: False
+    Image:
+        source: root.source
+        allow_stretch: True
+    #TODO kill button
+
+
+<Choice@Image>:
+    size_hint: None, None
+    size: 300, 300
+    pos_hint: {'top': '1'}
+
+<TypeButton>:
+    group: 'type'
+    y: choice_height if self.state == 'down' else 0
+    text: self.t
+    font_size: '2cm'
+
+
+BoxLayout:
+    orientation: 'vertical'
+    RoomView:
+        id: roomview
+
+    Widget:
+        id: choice_cointainer
+        size_hint_y: None
+        ScrollView:
+            canvas.before:
+                Color:
+                    rgba: 1, 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            top: 200 if choser.choice else 0
+            x: self.parent.x
+            size: self.parent.size
+            GridLayout:
+                id: choices
+                rows: 1
+                size_hint: None, None
+                height: choice_cointainer.height
+                width: self.minimum_width
+
+        Choser:
+            pos: self.parent.pos
+            size: self.parent.size
+            id: choser
+            height: '2cm'
+            on_choice: print self.choice
+
+            TypeButton:
+                t: types[0]
+                on_state: choser.update_choice()
+            TypeButton:
+                t: types[1]
+                on_state: choser.update_choice()
+            TypeButton:
+                t: types[2]
+                on_state: choser.update_choice()
+            TypeButton:
+                t: types[3]
+                on_state: choser.update_choice()
+            TypeButton:
+                t: types[4]
+                on_state: choser.update_choice()
