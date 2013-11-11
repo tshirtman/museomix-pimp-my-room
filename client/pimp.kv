@@ -1,0 +1,163 @@
+#:import join os.path.join
+#:import Factory kivy.factory.Factory
+#:import types main.types
+#:import MINIATURES main.MINIATURES
+#:set choice_height '4cm'
+
+<Choser>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 1
+
+        Rectangle:
+            pos: root.pos
+            size: root.size
+
+
+<RoomView@FloatLayout>:
+    Image:
+        id: img
+        source: app.wallpaper
+        pos_hint: {'center_x': .5, 'y': 0}
+        allow_stretch: True
+        keep_ratio: False
+    Widget:
+        id: posters
+    Widget:
+        id: windows
+    Image:
+        id: foreground
+        size: root.size
+        source: join('data', 'interface-fond-OK.png')
+
+<Poster>:
+    #do_rotation: False
+    on_parent: print self.parent
+    size: img.texture_size
+    Image:
+        id: img
+        size: self.texture_size
+        source: root.source
+        allow_stretch: True
+
+    #Button:
+    #    id: close
+    #    size_hint: None, None
+    #    size: 60, 60
+    #    center: root.width / 2, root.height / 2
+    #    disabled: True
+    #    opacity: 0
+    #    text: 'x'
+    #    background_normal: ''
+    #    background_down: ''
+    #    canvas.before:
+    #        Color:
+    #            rgba: 1, 0, 0, 1
+    #        Ellipse:
+    #            pos: self.pos
+    #            size: self.size
+    #    on_release:
+    #        print "test"
+    #        root.parent.remove_widget(root)
+
+<-VideoPoster>:
+    size: img.texture_size
+    Video:
+        id: img
+        state: 'play'
+        size: self.texture_size
+        source: root.source
+        allow_stretch: True
+
+
+<Choice>:
+    disabled: True
+    color: (.2, .2, .2, 1) if self.disabled else (1, 1, 1, 1)
+    size_hint: None, None
+    size: 300, 300
+    pos_hint: {'top': '1'}
+    on_disabled: print self.disabled
+    #    print [x.source for x in (
+    #    app.root.ids.roomview.ids.posters.children +
+    #    app.root.ids.roomview.ids.windows.children)]
+    #    print "disabled", self.source, self.disabled
+    disabled:
+        self.source in (
+        x.source for x in (
+        app.root.ids.roomview.ids.posters.children +
+        app.root.ids.roomview.ids.windows.children))
+
+
+<TypeButton>:
+    group: 'type'
+    # sorry for parent.parent.parent, root.ids.choices doesn't work here
+    # because of late binding
+    y: self.parent.parent.parent.ids.choices.top if self.state == 'down' else 0
+    text: self.t.replace(MINIATURES, '')
+    on_text: print self.text
+    on_t:
+        print self.t, MINIATURES, self.t.replace(MINIATURES, '')
+        self.text = self.t.replace(MINIATURES, '')
+    font_size: '2cm'
+    font_name: join('data', 'OSP-DIN.ttf')
+
+
+BoxLayout:
+    orientation: 'vertical'
+    RoomView:
+        id: roomview
+
+    Widget:
+        id: choice_container
+        size_hint_y: None
+        height: 0
+        ScrollView:
+            canvas.before:
+                Color:
+                    rgba: .1, .1, .1, .9
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            y: (choser.top) if choser.choice else -1000 # a bit ugly :[
+            x: self.parent.x
+            width: self.parent.width
+            height: choices.height
+            GridLayout:
+                id: choices
+                rows: 1
+                size_hint: None, None
+                height: self.minimum_height
+                width: self.minimum_width
+
+        Choser:
+            pos: self.parent.pos
+            width: self.parent.width
+            id: choser
+            height: '2cm'
+            on_choice: print self.choice
+
+            TypeButton:
+                t: types[0]
+                on_state: choser.update_choice()
+                background_color: .9, .1, .1, 1
+            TypeButton:
+                t: types[1]
+                on_state: choser.update_choice()
+                background_color: .1, .9, .9, 1
+            #TypeButton:
+            #    t: types[2]
+            #    on_state: choser.update_choice()
+            #    background_color: .5, .8, .2, 1
+            #TypeButton:
+            #    t: types[3]
+            #    on_state: choser.update_choice()
+            #ypeButton:
+            #   t: types[4]
+            #   on_state: choser.update_choice()
+            Button:
+                background_color: .2, .5, .8, 1
+                text: 'effacer'
+                on_press: app.clear()
+                font_size: '2cm'
+                font_name: join('data', 'OSP-DIN.ttf')
