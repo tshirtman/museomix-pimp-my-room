@@ -1,0 +1,22 @@
+{
+	"config" : {
+		"visu" : {
+			"mOffsetX" : 0.0,
+			"mConsole" : true,
+			"mSaveParam" : true,
+			"mDisplayInfos" :  false,
+			"mOffsetPositionImage" :
+			{ 
+				"x" : 0.0,
+				"y" : 0.0
+			},
+			"mOffsetPositionWall" :
+			{ 
+				"x" : 0.0,
+				"y" : 0.0
+			},
+			"mScaleImage" : 0.5,
+			"mScaleImageWall" : 1.0
+		}
+	}
+}

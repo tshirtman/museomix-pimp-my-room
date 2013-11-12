@@ -1,0 +1,17 @@
+
+Pour gérer la fenêtre :
+	quitter : shift echap
+	f	: change fullscreen
+	i	: afficher infos
+Pour régler le warping : 
+	regardez help_warping.png
+	shift echap pour enregistrer le warp
+Pour régler le masque :
+	v : afficher point du masque 
+	n : nouveau mask
+	b : change sélection masque
+	x : surpprimer masque
+	shift echap pour enregister les masques
+
+
+

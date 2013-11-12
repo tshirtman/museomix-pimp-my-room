@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="blocks">
+      <UniqueIdentifier>{048ffe2a-7192-42f8-99c0-97e73525d3e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OSC">
+      <UniqueIdentifier>{8647a4ab-bdba-4312-901d-20af0f39c88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\warping">
+      <UniqueIdentifier>{60a5f93a-164a-43e6-a5fe-022ab3eb36f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OSC\src">
+      <UniqueIdentifier>{a7952128-1220-4743-b29d-95783da6dfe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OSC\src\ip">
+      <UniqueIdentifier>{8c5f45a0-343d-42ac-926d-ca0b974dcd84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OSC\src\osc">
+      <UniqueIdentifier>{2e31aaf3-6f16-4fc0-95e4-6845eef4507c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\warping\src">
+      <UniqueIdentifier>{6d118c60-0858-492f-bc95-9c35f6c62ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\warping\include">
+      <UniqueIdentifier>{e586cb58-5167-4cc6-bacb-34113437e88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OpenCv">
+      <UniqueIdentifier>{aac927cb-f49e-4c41-82fe-91010f3a9935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OpenCv\include">
+      <UniqueIdentifier>{8bcbb787-7175-487a-baef-c83af18f5775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks\OSC\src\ip\win32">
+      <UniqueIdentifier>{a5e14411-23a3-4600-b8c6-0bc5b06a75e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\PimpMyRoomApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PimpMyRoomApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\blocks\OSC\src\OscBundle.cpp">
+      <Filter>blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\OscListener.cpp">
+      <Filter>blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\OscMessage.cpp">
+      <Filter>blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\OscSender.cpp">
+      <Filter>blocks\OSC\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\osc\OscOutboundPacketStream.cpp">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\osc\OscPrintReceivedElements.cpp">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\osc\OscReceivedElements.cpp">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\osc\OscTypes.cpp">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\ip\IpEndpointName.cpp">
+      <Filter>blocks\OSC\src\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Warping\src\WarpPerspectiveBilinear.cpp">
+      <Filter>blocks\warping\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Warping\src\Warp.cpp">
+      <Filter>blocks\warping\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Warping\src\WarpBilinear.cpp">
+      <Filter>blocks\warping\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\Warping\src\WarpPerspective.cpp">
+      <Filter>blocks\warping\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\ip\win32\UdpSocket.cpp">
+      <Filter>blocks\OSC\src\ip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\blocks\OSC\src\ip\win32\NetworkingUtils.cpp">
+      <Filter>blocks\OSC\src\ip\win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\OscArg.h">
+      <Filter>blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\OscBundle.h">
+      <Filter>blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\OscListener.h">
+      <Filter>blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\OscMessage.h">
+      <Filter>blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\OscSender.h">
+      <Filter>blocks\OSC\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\MessageMappingOscPacketListener.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscException.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscHostEndianness.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscOutboundPacketStream.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscPacketListener.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscPrintReceivedElements.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscReceivedElements.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\osc\OscTypes.h">
+      <Filter>blocks\OSC\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\ip\IpEndpointName.h">
+      <Filter>blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\ip\NetworkingUtils.h">
+      <Filter>blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\ip\PacketListener.h">
+      <Filter>blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\ip\TimerListener.h">
+      <Filter>blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OSC\src\ip\UdpSocket.h">
+      <Filter>blocks\OSC\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Warping\include\Warp.h">
+      <Filter>blocks\warping\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Warping\include\WarpBilinear.h">
+      <Filter>blocks\warping\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Warping\include\WarpPerspective.h">
+      <Filter>blocks\warping\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\Warping\include\WarpPerspectiveBilinear.h">
+      <Filter>blocks\warping\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\blocks\OpenCV\include\CinderOpenCV.h">
+      <Filter>blocks\OpenCv\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

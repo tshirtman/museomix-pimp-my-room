@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<warpconfig version="1.0" profile="default">
+	<profile name="default">
+		<map id="1" display="1">
+			<warp method="perspectivebilinear" width="3" height="2" brightness="1" resolution="36" linear="1" adaptive="0">
+				<controlpoint x="0" y="0"/>
+				<controlpoint x="0" y="1"/>
+				<controlpoint x="0.496263325" y="0.225068778"/>
+				<controlpoint x="0.485734314" y="0.754026234"/>
+				<controlpoint x="1" y="0"/>
+				<controlpoint x="1" y="1"/>
+				<corner x="0.010416667" y="0.0287037045"/>
+				<corner x="1" y="0"/>
+				<corner x="1" y="1"/>
+				<corner x="0.0125000002" y="0.96875"/>
+			</warp>
+		</map>
+	</profile>
+</warpconfig>
+
