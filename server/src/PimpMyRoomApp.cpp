@@ -796,8 +796,8 @@ void PimpMyRoomApp::update()
 			if( message.getNumArgs() > 0 && message.getArgType( 0 ) == osc::TYPE_STRING)
 			{
 				console()<<"delete"<<endl;
-				//string id = message.getArgAsString(0);
-				string id = "mucha";
+				string id = message.getArgAsString(0);
+				//string id = "mucha";
 				mAsset["image"][id].mActive = false;
 			}
 		}
