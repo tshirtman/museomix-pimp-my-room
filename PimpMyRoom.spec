@@ -15,7 +15,7 @@ from os.path import expanduser
 install_hooks(globals())
 
 a = Analysis(['main.py'],
-             pathex=['.'],
+             pathex=['client/'],
              hiddenimports=['numpy.core.multiarray'],
              excludes=['gobject', 'gio', 'PIL', 'gst', 'gtk', 'gi', 'wx', 'twisted', 'curses'] + (['pygame'] if IS_LINUX else []),
              runtime_hooks=None)
