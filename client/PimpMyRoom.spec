@@ -15,7 +15,7 @@ from os.path import expanduser
 install_hooks(globals())
 
 a = Analysis(['main.py'],
-             pathex=['client/'],
+             pathex=['.'],
              hiddenimports=['numpy.core.multiarray'],
              excludes=['gobject', 'gio', 'PIL', 'gst', 'gtk', 'gi', 'wx', 'twisted', 'curses'] + (['pygame'] if IS_LINUX else []),
              runtime_hooks=None)
@@ -34,7 +34,7 @@ exe = EXE(pyz,
           console=False,
           icon=join('data', 'icon_PympMyRoom.ico'))
 coll = COLLECT(exe,
-               Tree('client/',
+               Tree('.',
                     excludes=[
                         '.git', '*.spec', '*.ini',
                         'Makefile', 'build', 'dist', '*.pyo',
