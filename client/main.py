@@ -44,7 +44,7 @@ def osc_send(addr, data=None):
 
 
 def istype(choice, tp):
-    return choice.split('/')[2].lower() == tp
+    return choice.split(sep)[2].lower() == tp
 
 
 def listdir(d):
