@@ -22,7 +22,8 @@ a = Analysis(['main.py'],
 
 pyz = PYZ(a.pure)
 
-name = 'PympMyRoom%s' % ('.exe' if os.name == 'nt' else '')
+name = 'PimpMyRoom%s' % ('.exe' if os.name == 'nt' else '')
+
 
 exe = EXE(pyz,
           a.scripts,
@@ -32,7 +33,7 @@ exe = EXE(pyz,
           strip=None,
           upx=True,
           console=False,
-          icon=join('data', 'icon_PympMyRoom.ico'))
+          icon=join('data', 'icon_PimpMyRoom.ico'))
 coll = COLLECT(exe,
                Tree('.',
                     excludes=[
@@ -47,8 +48,8 @@ coll = COLLECT(exe,
                a.datas,
                strip=None,
                upx=True,
-               name='PympMyRoom')
+               name='PimpMyRoom')
 
 app = BUNDLE(coll,
-             name='PympMyRoom.app',
-             icon='data/PympMyRoom.icns')
+             name='PimpMyRoom.app',
+             icon='data/PimpMyRoom.icns')
