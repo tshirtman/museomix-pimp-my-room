@@ -11,7 +11,7 @@ else
 	RMDIR=rm -rf
 	MV=mv
 	condiment=condiment
-	installer=tar -C dist -caf dist/PimpMyRoom.tar.bz2 dist/PimpMyRoom
+	installer=tar -C dist -caf PimpMyRoom.tar.bz2 PimpMyRoom
 	make_icon=tools/create_icon.sh
 	ifeq ($(UNAME_S), Darwin)
 		installer=hdiutil create dist/PimpMyRoom.dmg -srcfolder dist/PimpMyRoom.app -ov
