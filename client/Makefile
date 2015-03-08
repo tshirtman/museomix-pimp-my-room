@@ -4,7 +4,6 @@ ifdef ComSpec
 	MV=cmd /C move
 	condiment=python -m condiment
 	installer="\Program Files (x86)\Inno Setup 5\ISCC.exe" PimpMyRoom.iss
-	cd client
 else
 	UNAME_S = $(shell uname -s)
 	RM=rm -f
