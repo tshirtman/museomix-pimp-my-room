@@ -19,7 +19,7 @@ from os.path import join, isdir, dirname
 import socket
 
 outSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-SERVER = '192.168.1.10'
+SERVER = 'localhost'
 PORT = 3000
 
 PAINTED = 'fonds-vignettes'
