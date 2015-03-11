@@ -4,11 +4,10 @@ museomix-pimp-my-room
 A Project for Museomix 2013 in Paris' Art Décoratif museum
 
 This Software allows displaying a room and a collection of objects and
-tapisseries, user can select them and decorate the room with them.
+tapestries, user can select them and decorate the room with them.
 
 
-Client:
--------
+## Client:
 
 The client uses selected images to display the room and objects to use for
 decoration, when selected or moved, the coordinates of these objects are sent
@@ -21,20 +20,20 @@ To start it, go to the client subdirectory and start
     python main.py
 
 
-Server:
--------
+## Server:
 
 written in C++ using Cinder
 
-Installation:
-++++++++++++++
+### Installation:
+
 
 Install CINDER 8.5 for windows : http://libcinder.org/
 Install visual studio 2012 for desktop
 set environment variable CINDER_805 on CINDER's root.
 
 
-Control :
+### Control:
+
 to manage the window:
 	shift escape : quit
 	f	     : change fullscreen
